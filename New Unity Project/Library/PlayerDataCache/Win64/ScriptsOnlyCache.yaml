@@ -32,6 +32,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Network/Scenes/SampleScene.unity:
@@ -80,11 +83,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11464}
     - Class: 114
+      Script: {instanceID: 11468}
+    - Class: 114
       Script: {instanceID: 11514}
     - Class: 114
       Script: {instanceID: 11642}
     - Class: 114
+      Script: {instanceID: 11870}
+    - Class: 114
       Script: {instanceID: 11984}
+    - Class: 114
+      Script: {instanceID: 12238}
     - Class: 114
       Script: {instanceID: 12556}
     - Class: 114
