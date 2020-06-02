@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using Mirror;
 using UnityEngine.UI; 
 using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Utility;
 
 namespace Network.Scenes.NewScene
 {
@@ -42,6 +43,8 @@ namespace Network.Scenes.NewScene
         {
             // メッセージ入力欄のInputFieldを検索して取得
             m_ChatInputField = GameObject.Find("ChatInputField").GetComponent<InputField>();
+            //カメラのTargetを指定
+            //Camera.main.GetComponent<FollowTarget>().target = this.transform;
         }
 
         void Update()

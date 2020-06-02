@@ -1,13 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp-firstpass.dll:
-    - UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter
-    - UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl
+    - UnityStandardAssets.Utility.FollowTarget
     Assembly-CSharp.dll:
     - Network.Scenes.NewScene.Player
-    - UnityChan.AutoBlink
-    - UnityChan.FaceUpdate
-    - UnityChan.IdleChanger
     Mirror.Components.dll:
     - Mirror.NetworkAnimator
     - Mirror.NetworkTransform
@@ -28,6 +24,15 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Network/Scenes/SampleScene.unity:
     - Class: 1
@@ -67,18 +72,38 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11232}
     - Class: 114
+      Script: {instanceID: 11236}
+    - Class: 114
       Script: {instanceID: 11314}
     - Class: 114
       Script: {instanceID: 11442}
     - Class: 114
+      Script: {instanceID: 11464}
+    - Class: 114
+      Script: {instanceID: 11514}
+    - Class: 114
+      Script: {instanceID: 11642}
+    - Class: 114
+      Script: {instanceID: 11984}
+    - Class: 114
       Script: {instanceID: 12556}
+    - Class: 114
+      Script: {instanceID: 12746}
+    - Class: 114
+      Script: {instanceID: 13120}
+    - Class: 114
+      Script: {instanceID: 13164}
     - Class: 114
       Script: {instanceID: 13178}
     - Class: 114
       Script: {instanceID: 13368}
     - Class: 114
+      Script: {instanceID: 13598}
+    - Class: 114
       Script: {instanceID: 13628}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -87,6 +112,14 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
