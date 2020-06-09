@@ -25,6 +25,12 @@ namespace Network.Scenes.NewScene
         // メッセージの入力欄
         InputField m_ChatInputField;
 
+        TextMesh m_PlayerNameText;
+
+        // プレイヤー名
+        //[SyncVar]
+        //public string m_PlayerName;
+
 
 
         void Start()
@@ -36,6 +42,18 @@ namespace Network.Scenes.NewScene
             // メッセージ履歴を表示するTextを検索して取得
             m_ChatHistory = GameObject.Find("ChatHistory").GetComponent<Text>();
 
+            // 頭上のプレイヤー名表示を取得
+            //m_PlayerNameText = transform.Find("PlayerNameText").GetComponent<TextMesh>();
+
+            //if (isLocalPlayer){
+                // 頭上のプレイヤー名表示は無効に
+            //    m_PlayerNameText.gameObject.SetActive(false);
+            //}
+            //else
+            //{
+                // 頭上のプレイヤー名表示に文字列を設定
+            //    m_PlayerNameText.text = m_PlayerName;
+            //}
         }
     
         // ローカルプレイヤーが初期化される際に呼ばれる。
@@ -52,8 +70,11 @@ namespace Network.Scenes.NewScene
 
             
             // ローカルプレイヤー以外では何もしない
-            if (!isLocalPlayer)
-                return;
+            if (!isLocalPlayer){
+                gameObject.GetComponent<Camera>().enabled = false;
+                gameObject.GetComponent<AudioListener>().enabled = false;
+            }
+                
 
             // 移動量(メートル/秒)
             Vector3 motion = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * m_WalkSpeed;

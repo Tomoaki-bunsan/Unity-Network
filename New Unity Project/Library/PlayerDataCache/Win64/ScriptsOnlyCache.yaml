@@ -37,7 +37,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Network/Scenes/SampleScene.unity:
+    Assets/Network/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -93,23 +93,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11984}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12556}
+      Script: {instanceID: 12558}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12748}
     - Class: 114
-      Script: {instanceID: 13120}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13164}
+      Script: {instanceID: 13166}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 13180}
     - Class: 114
-      Script: {instanceID: 13368}
+      Script: {instanceID: 13370}
     - Class: 114
-      Script: {instanceID: 13598}
+      Script: {instanceID: 13600}
     - Class: 114
-      Script: {instanceID: 13628}
+      Script: {instanceID: 13630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1529,7 +1529,13 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TitleManeger
   platform: 19
   scenePathNames:
-  - Assets/Network/Scenes/SampleScene.unity
+  - Assets/Network/Scenes/Game.unity
   playerPath: C:/Users/iamto/Desktop/unity/New Unity Project/Builds/New Unity Project.exe
