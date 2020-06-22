@@ -3451,8 +3451,9 @@ GameObject:
   - component: {fileID: 5291467191604462375}
   - component: {fileID: 5291467191611370663}
   - component: {fileID: 5291467193252013658}
-  - component: {fileID: 5291467193252013659}
+  - component: {fileID: 5088542953034209765}
   - component: {fileID: 375277125572088055}
+  - component: {fileID: 5291467193252013659}
   - component: {fileID: 2842159737388254450}
   - component: {fileID: 3057880317164073504}
   m_Layer: 0
@@ -3516,7 +3517,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &5291467193252013659
+--- !u!114 &5088542953034209765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3525,17 +3526,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5291467191603977927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cda0d14b13dce74f9fc7ece142fc404, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e0698a45cebe2e4d841200c286bdbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPV: {fileID: 375277125572088055}
-  myPTV: {fileID: 2842159737388254450}
-  animator: {fileID: 5291467191611370663}
-  controller: {fileID: 5291467193252013658}
-  speed: 3
-  jumpSpeed: 5
-  rotateSpeed: 10
-  gravity: 20
+  PlayerUiPrefab: {fileID: 808280614211190743, guid: 7d70b8f893e7ecc43a13f2559114b63e,
+    type: 3}
+  HP: 100
 --- !u!114 &375277125572088055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3559,11 +3555,32 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2842159737388254450}
   - {fileID: 3057880317164073504}
+  - {fileID: 5088542953034209765}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &5291467193252013659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291467191603977927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cda0d14b13dce74f9fc7ece142fc404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPV: {fileID: 375277125572088055}
+  myPTV: {fileID: 2842159737388254450}
+  animator: {fileID: 5291467191611370663}
+  controller: {fileID: 5291467193252013658}
+  speed: 3
+  jumpSpeed: 5
+  rotateSpeed: 10
+  gravity: 20
 --- !u!114 &2842159737388254450
 MonoBehaviour:
   m_ObjectHideFlags: 0

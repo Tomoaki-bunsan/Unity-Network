@@ -1,60 +1,41 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
 using System.Collections;
 
-namespace Com.MyCompany.MyGame
+
+public class NameInputFieldScript : MonoBehaviour
 {
-    /// <summary>
-    /// Player name input field. Let the user input his name, will appear above the player in the game.
-    /// </summary>
-    [RequireComponent(typeof(InputField))]
-    public class PlayerNameInputField : MonoBehaviour
+    #region Private変数定義
+    static string playerNamePrefKey = "PlayerName";
+    #endregion
+
+    #region MonoBehaviourコールバック
+    void Start()
     {
-        #region Private Variables
+        string defaultName = "";
+        InputField _inputField = this.GetComponent<InputField>();
 
-        // Store the PlayerPref Key to avoid typos
-        static string playerNamePrefKey = "PlayerName";
-
-        #endregion
-
-        #region MonoBehaviour CallBacks
-
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during initialization phase.
-        /// </summary>
-        void Start () {
-
-            string defaultName = "";
-            InputField _inputField = this.GetComponent<InputField>();
-            if (_inputField!=null)
-            {
-                if (PlayerPrefs.HasKey(playerNamePrefKey))
-                {
-                    defaultName = PlayerPrefs.GetString(playerNamePrefKey);
-                    _inputField.text = defaultName;
-                }
-            }
-
-            PhotonNetwork.playerName =  defaultName;
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// Sets the name of the player and save it in the PlayerPrefs for future sessions.
-        /// </summary>
-        /// <param name="value">The name of the Player</param>
-        public void SetPlayerName(string value)
+        //前回プレイ開始時に入力した名前をロードして表示
+        if (_inputField != null)
         {
-            // #Important
-            PhotonNetwork.playerName = value + " "; // force a trailing space string in case value is an empty string, else playerName would not be updated.
-
-            PlayerPrefs.SetString(playerNamePrefKey,value);
+            if (PlayerPrefs.HasKey(playerNamePrefKey))
+            {
+                defaultName = PlayerPrefs.GetString(playerNamePrefKey);
+                _inputField.text = defaultName;
+            }
         }
-
-        #endregion
     }
+    #endregion
+
+    #region Public Method
+
+    public void SetPlayerName(string value)
+    {
+        PhotonNetwork.playerName = value + " ";     //今回ゲームで利用するプレイヤーの名前を設定
+
+        PlayerPrefs.SetString(playerNamePrefKey, value);    //今回の名前をセーブ
+
+        Debug.Log(PhotonNetwork.player.NickName);   //playerの名前の確認。（動作が確認できればこの行は消してもいい）
+    }
+    #endregion
 }
