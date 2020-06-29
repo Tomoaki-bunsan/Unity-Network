@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 6ec1e96b916a6754ebb61107e3aad4d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Demo2DJumpAndRunWithPhysics-Scene.unity
     guid: 2cd8533503c3ea649b6c543c6126c811
+  - enabled: 1
+    path: Assets/Scenes/Game2.unity
+    guid: 8e37f57a37e61ee4199562db57b8a18b
   m_configObjects: {}

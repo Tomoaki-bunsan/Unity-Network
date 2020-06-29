@@ -3,12 +3,12 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(PhotonView))]
-public class InRoomChat : Photon.MonoBehaviour
+public class InRoomChatOriginal : Photon.MonoBehaviour
 {
-    public Rect GuiRect = new Rect(0,0, 250,300);
+    public Rect GuiRect = new Rect(0, 0, 300, 200); //チャットUIの大きさ設定用
+    public List<string> messages = new List<string>();  //チャットログ格納用List
     public bool IsVisible = true;
     public bool AlignBottom = false;
-    public List<string> messages = new List<string>();
     private string inputLine = "";
     private Vector2 scrollPos = Vector2.zero;
 
@@ -22,12 +22,23 @@ public class InRoomChat : Photon.MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        //ChatUIの位置を調整
+        this.GuiRect.y = Screen.height - this.GuiRect.height;
+        //ChatUIの大きさ調整
+        GuiRect.width = Screen.width / 3;
+        GuiRect.height = Screen.height / 3;
+    }
+
     public void OnGUI()
     {
         if (!this.IsVisible || !PhotonNetwork.inRoom)
         {
             return;
         }
+
+        
 
         if (Event.current.type == EventType.KeyDown && (Event.current.keyCode == KeyCode.KeypadEnter || Event.current.keyCode == KeyCode.Return))
         {
@@ -36,6 +47,7 @@ public class InRoomChat : Photon.MonoBehaviour
                 this.photonView.RPC("Chat", PhotonTargets.All, this.inputLine);
                 this.inputLine = "";
                 GUI.FocusControl("");
+                scrollPos.y = Mathf.Infinity;
                 return; // printing the now modified list would result in an error. to avoid this, we just skip this single frame
             }
             else
@@ -49,7 +61,7 @@ public class InRoomChat : Photon.MonoBehaviour
 
         scrollPos = GUILayout.BeginScrollView(scrollPos);
         GUILayout.FlexibleSpace();
-        for (int i = messages.Count - 1; i >= 0; i--)
+        for (int i = 0; i <= messages.Count - 1; i++)
         {
             GUILayout.Label(messages[i]);
         }
@@ -92,4 +104,6 @@ public class InRoomChat : Photon.MonoBehaviour
     {
         this.messages.Add(newLine);
     }
+
+
 }

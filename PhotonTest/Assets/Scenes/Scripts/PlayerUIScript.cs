@@ -35,7 +35,7 @@ public class PlayerUIScript : MonoBehaviour
     void Awake()
     {
         //このオブジェクトはCanvasオブジェクトの子オブジェクトとして生成
-        this.GetComponent<Transform>().SetParent(GameObject.Find("Canvas").GetComponent<Transform>());
+       // this.GetComponent<Transform>().SetParent(GameObject.Find("Canvas").GetComponent<Transform>());
     }
 
     void Update()

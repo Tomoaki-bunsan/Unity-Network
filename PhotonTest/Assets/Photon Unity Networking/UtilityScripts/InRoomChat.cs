@@ -158,7 +158,7 @@ public class InRoomChat : Photon.MonoBehaviour
             messages.Clear();               //全てのチャットログを削除
             chatKind.Clear();               //全てのチャットの種類情報削除
         }
-        if (!isAll) //範囲チャとして受信
+        if (!isAll) //範囲チャットとして受信
         {
             //myPlayerとsenderの距離から受信するか判断
             if (Vector3.Distance(myPlayer.transform.position, senderposition) < 10)
