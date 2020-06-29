@@ -7,3 +7,5 @@
 - プレイヤー名を入力して Start を押すとPhotonCloudに接続してGameシーンに移動します。
 - キャラクターは AWDS か矢印キーで操作できます
 - カメラは右クリックしながらマウスを動かすか QE キーで操作できます
+- PlayerUIにはHPバーなどが含まれていますが特に意味はありません(非表示にしてます)
+- InRoomChatOriginalの方をChatManagerに使えばとりあえずChatはできます(RPCを使ったもの)
